@@ -67,7 +67,7 @@ public class Department
 	public void setWebsite(String website) {
 		this.website = website;
 	}
-
+ 
 	public String getHeadOfDepartment() {
 		return headOfDepartment;
 	}
@@ -76,7 +76,21 @@ public class Department
 		this.headOfDepartment = headOfDepartment;
 	}
 	
-	
+	public String toString()
+	{
+		return name							+ 
+				" situato in " 				+
+				address						+ 
+				". Numero di telefono: " 	+
+				phone						+
+				". Indirizzo mail: "		+
+				email						+		
+				". Sito web: "				+
+				website						+
+				". Capodipartimento: "		+
+				headOfDepartment			+
+				"."							;
+	}
 	
 	
 }
