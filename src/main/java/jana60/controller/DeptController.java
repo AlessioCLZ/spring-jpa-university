@@ -19,6 +19,12 @@ public class DeptController {
 	private DeptRepository repo;
 	
 	@GetMapping
+	public String index (Model model)
+	{
+		return "index";
+	}
+	
+	@GetMapping("/department")
 	public String department(Model model)
 	{
 		List<Department> deptList = (List<Department>) repo.findAll();
