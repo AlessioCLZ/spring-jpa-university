@@ -1,24 +1,28 @@
 package jana60.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="departments")
-public class Department 
-{
+@Table(name="degrees")
+public class Degree {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String name, address, phone, email, website;
+	private String name, address, email, website;
 	
-	@Column (name= "head_of_department")
-	private String headOfDepartment;
+
+
+	@ManyToOne
+	  @JoinColumn(name = "department_id")
+	  private Department department;
 
 	public Integer getId() {
 		return id;
@@ -44,14 +48,6 @@ public class Department
 		this.address = address;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -67,13 +63,17 @@ public class Department
 	public void setWebsite(String website) {
 		this.website = website;
 	}
- 
-	public String getHeadOfDepartment() {
-		return headOfDepartment;
+	
+	  public Department getDepartment() {
+		return department;
 	}
 
-	public void setHeadOfDepartment(String headOfDepartment) {
-		this.headOfDepartment = headOfDepartment;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
-	
+
+	public String getDepartmentName()
+	{
+		return department.getName();
+	}
 }
