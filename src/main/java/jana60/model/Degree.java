@@ -74,6 +74,6 @@ public class Degree {
 
 	public String getDepartmentName()
 	{
-		return department.getName();
+		return this.department.getName();
 	}
 }
