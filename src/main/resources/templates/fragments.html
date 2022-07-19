@@ -21,7 +21,16 @@
                             <a class="nav-link" th:classAppend= "${current == 'index'} ? active : not-active" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" th:classAppend= "${current == 'department'} ? active : not-active" href="/department">Departments</a>
+                            <a class="nav-link" th:classAppend= "${current == 'department'} ? active : not-active" href="/department">Dipartimenti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:classAppend= "${current == 'degrees'} ? active : not-active" href="/degrees">Corsi di Laurea</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:classAppend= "${current == 'teachers'} ? active : not-active" href="/teachers">Insegnanti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:classAppend= "${current == 'courses'} ? active : not-active" href="/courses">Insegnamenti</a>
                         </li>
                     </ul>
                 </div>
